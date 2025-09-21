@@ -1,0 +1,156 @@
+
+import 'package:flutter/material.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+
+class Fontstyles {
+  static TextStyle roboto35px(BuildContext context, WidgetRef ref, [bool isblue = false]) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 35,
+      fontWeight: FontWeight.w900,
+      color: isblue ? color.secondaryGradient2 : color.iconColor,
+    );
+  }
+
+  static TextStyle roboto30px(
+    BuildContext context,
+    WidgetRef ref, [
+    Color? customColor,
+  ]) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 30,
+      fontWeight: FontWeight.w900,
+      color: customColor ?? color.iconColor,
+    );
+  }
+
+  static TextStyle roboto25px(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 25,
+      fontWeight: FontWeight.w900,
+      color: color.iconColor,
+    );
+  }
+
+  static TextStyle roboto20px(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 20,
+      fontWeight: FontWeight.w900,
+      color: color.iconColor,
+    );
+  }
+
+  static TextStyle roboto22px(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 22,
+      fontWeight: FontWeight.w900,
+      color: color.iconColor,
+    );
+  }
+
+  static TextStyle roboto15px(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 15,
+      fontWeight: FontWeight.w500,
+      color: color.iconColor,
+    );
+  }
+
+  static TextStyle roboto15pxNoColor(BuildContext context, WidgetRef ref) {
+    return GoogleFonts.roboto(fontSize: 15, fontWeight: FontWeight.w500);
+  }
+
+  static TextStyle roboto18px(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 18,
+      fontWeight: FontWeight.w500,
+      color: color.iconColor,
+    );
+  }
+
+  static TextStyle roboto16pxLight(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      color: color.iconColor,
+    );
+  }
+
+  static TextStyle roboto16pxSemiBold(
+    BuildContext context,
+    WidgetRef ref, [
+    bool isgrey = false,
+  ]) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      color: isgrey ? color.textfieldBackground : color.iconColor,
+    );
+  }
+
+  static TextStyle roboto16pxSemiBoldBlue(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 16,
+      fontWeight: FontWeight.w900,
+      color: color.secondaryGradient2,
+    );
+  }
+
+  static TextStyle roboto10px(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 10,
+      fontWeight: FontWeight.w700,
+      color: color.iconColor,
+    );
+  }
+
+  static TextStyle roboto13px(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 13,
+      fontWeight: FontWeight.w700,
+      color: color.iconColor,
+    );
+  }
+
+  static TextStyle roboto17Bold(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 17,
+      fontWeight: FontWeight.w700,
+      color: color.iconColor,
+    );
+  }
+
+  static TextStyle roboto12Hintpx(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+      color: color.hintTextColor,
+    );
+  }
+
+  static TextStyle roboto15Fadedpx(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 15,
+      fontWeight: FontWeight.w400,
+      color: color.teritiaryColor,
+    );
+  }
+}
