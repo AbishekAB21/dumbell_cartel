@@ -1,15 +1,15 @@
-import 'package:dumbell_cartel/features/auth%20screens/sign%20in%20screen/widgets/authbox.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+import 'package:dumbell_cartel/features/auth%20screens/sign%20up%20screen/widgets/signup_authbox.dart';
 
-class SignInComponent extends ConsumerWidget {
-  const SignInComponent({super.key});
+class SignUpComponent extends ConsumerWidget {
+  const SignUpComponent({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+    Widget build(BuildContext context, WidgetRef ref) {
     final color = ref.watch(themeProvider);
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -52,7 +52,7 @@ class SignInComponent extends ConsumerWidget {
                   Spacer(),
 
                   // Auth box
-                  Authbox(),
+                  SignupAuthbox(),
                 ],
               ),
             ),

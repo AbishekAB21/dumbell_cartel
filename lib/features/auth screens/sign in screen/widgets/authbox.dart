@@ -52,7 +52,12 @@ class Authbox extends ConsumerWidget {
 
           SizedBox(height: 40.0),
 
-          ReusableButton(title: "Sign in"),
+          ReusableButton(
+            title: "Sign in",
+            onPressed: () {
+              context.pushReplacement('/home-screen');
+            },
+          ),
 
           SizedBox(height: 20.0),
 

@@ -38,6 +38,15 @@ class Fontstyles {
     );
   }
 
+    static TextStyle luckiest25px(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.luckiestGuy(
+      fontSize: 25,
+      fontWeight: FontWeight.w900,
+      color: color.iconColor,
+    );
+  }
+
   static TextStyle roboto20px(BuildContext context, WidgetRef ref) {
     final color = ref.watch(themeProvider);
     return GoogleFonts.roboto(

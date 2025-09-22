@@ -1,4 +1,6 @@
 import 'package:dumbell_cartel/features/auth%20screens/sign%20in%20screen/container/sign_in_container.dart';
+import 'package:dumbell_cartel/features/auth%20screens/sign%20up%20screen/container/sign_up_container.dart';
+import 'package:dumbell_cartel/features/home%20screen/container/home_screen_container.dart';
 import 'package:dumbell_cartel/features/welcome%20screen/container/welcome_screen_container.dart';
 import 'package:go_router/go_router.dart';
 
@@ -30,5 +32,17 @@ final GoRouter appRouter = GoRouter(
     ),
 
     // Sign Up Screen
+    GoRoute(
+      path: '/signup-screen',
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: SignUpContainer()),
+    ),
+
+    // Home Screen
+    GoRoute(
+      path: '/home-screen',
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: HomeScreenContainer()),
+    ),
   ],
 );

@@ -44,9 +44,9 @@ class AppDefaultColor extends Appcolor {
   AppDefaultColor()
     : super(
         primaryColor: Colors.black,
-        secondaryGradient1: Color.fromRGBO(6, 97, 99, 1),
-        secondaryGradient2: Color.fromRGBO(9, 115, 117, 1),
-        teritiaryColor: Color.fromRGBO(20, 116, 118, 1),
+        secondaryGradient1: Color.fromRGBO(165, 235, 63, 1),
+        secondaryGradient2: Color.fromRGBO(144, 204, 54, 1),
+        teritiaryColor: Color.fromRGBO(163, 239, 50, 1),
         textColor: Colors.white70,
         background: Colors.black,
         darkOverlay: Colors.black,
@@ -65,15 +65,15 @@ class AppDarkColor extends Appcolor {
   AppDarkColor()
     : super(
         primaryColor: Colors.black,
-        secondaryGradient1: Color.fromRGBO(6, 97, 99, 1),
-        secondaryGradient2: Color.fromRGBO(9, 115, 117, 1),
-        teritiaryColor: Color.fromRGBO(20, 116, 118, 1),
+        secondaryGradient1: Color.fromRGBO(165, 235, 63, 1),
+        secondaryGradient2: Color.fromRGBO(144, 204, 54, 1),
+        teritiaryColor: Color.fromRGBO(163, 239, 50, 1),
         textColor: Colors.white70,
         background: Colors.black,
         darkOverlay: Colors.black,
         textfieldBackground: Colors.grey.shade900,
         textfieldBackground2: Colors.grey.shade800,
-        hintTextColor: Colors.white54,
+        hintTextColor: Colors.white,
         successColor: Colors.green.shade900,
         errorColor: Colors.red,
         deleteColor: const Color.fromARGB(255, 152, 23, 14),
@@ -86,9 +86,9 @@ class AppLightColor extends Appcolor {
   AppLightColor()
     : super(
         primaryColor: Colors.white,
-        secondaryGradient1: Color.fromRGBO(6, 97, 99, 1),
-        secondaryGradient2: Color.fromRGBO(9, 115, 117, 1),
-        teritiaryColor: Color.fromRGBO(20, 116, 118, 1),
+        secondaryGradient1: Color.fromRGBO(165, 235, 63, 1),
+        secondaryGradient2: Color.fromRGBO(144, 204, 54, 1),
+        teritiaryColor: Color.fromRGBO(163, 239, 50, 1),
         textColor: Colors.black87,
         background: Colors.white,
         darkOverlay: Colors.black,
