@@ -5,6 +5,7 @@ import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 
 import 'package:dumbell_cartel/common/widgets/reusable_button.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+import 'package:go_router/go_router.dart';
 
 class WelcomeScreenComponent extends ConsumerWidget {
   const WelcomeScreenComponent({super.key});
@@ -14,7 +15,7 @@ class WelcomeScreenComponent extends ConsumerWidget {
     final color = ref.watch(themeProvider);
 
     return Scaffold(
-      backgroundColor: color.background,
+      backgroundColor: color.darkOverlay,
 
       body: Stack(
         children: [
@@ -76,7 +77,12 @@ class WelcomeScreenComponent extends ConsumerWidget {
                 SizedBox(height: 40),
 
                 // Get Started Button
-                ReusableButton(title: "Get started", onPressed: (){},),
+                ReusableButton(
+                  title: "Get started",
+                  onPressed: () {
+                    context.pushReplacement('/signin-screen');
+                  },
+                ),
               ],
             ),
           ),

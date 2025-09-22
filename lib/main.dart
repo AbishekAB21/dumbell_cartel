@@ -1,7 +1,9 @@
-import 'package:dumbell_cartel/common/providers/theme_provider.dart';
-import 'package:dumbell_cartel/features/welcome%20screen/container/welcome_screen_container.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:dumbell_cartel/routes/app_routes.dart';
+import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 
 void main() {
   runApp(ProviderScope(child: const MyApp()));
@@ -14,13 +16,13 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Dumbell Cartel',
       debugShowCheckedModeBanner: false,
       themeMode: themeMode,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      home: WelcomeScreenContainer(),
+      routerConfig: appRouter,
     );
   }
 }

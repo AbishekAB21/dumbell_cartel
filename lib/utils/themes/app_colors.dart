@@ -10,6 +10,7 @@ abstract class Appcolor {
   final Color secondaryGradient2;
   final Color textColor;
   final Color background;
+  final Color darkOverlay;
   final Color textfieldBackground;
   final Color textfieldBackground2;
   final Color hintTextColor;
@@ -26,6 +27,7 @@ abstract class Appcolor {
     required this.secondaryGradient2,
     required this.textColor,
     required this.background,
+    required this.darkOverlay,
     required this.textfieldBackground,
     required this.textfieldBackground2,
     required this.hintTextColor,
@@ -47,6 +49,7 @@ class AppDefaultColor extends Appcolor {
         teritiaryColor: Color.fromRGBO(20, 116, 118, 1),
         textColor: Colors.white70,
         background: Colors.black,
+        darkOverlay: Colors.black,
         textfieldBackground: Colors.grey.shade900,
         textfieldBackground2: Colors.grey.shade600,
         hintTextColor: Colors.white24,
@@ -67,9 +70,10 @@ class AppDarkColor extends Appcolor {
         teritiaryColor: Color.fromRGBO(20, 116, 118, 1),
         textColor: Colors.white70,
         background: Colors.black,
+        darkOverlay: Colors.black,
         textfieldBackground: Colors.grey.shade900,
         textfieldBackground2: Colors.grey.shade800,
-        hintTextColor: Colors.white24,
+        hintTextColor: Colors.white54,
         successColor: Colors.green.shade900,
         errorColor: Colors.red,
         deleteColor: const Color.fromARGB(255, 152, 23, 14),
@@ -87,6 +91,7 @@ class AppLightColor extends Appcolor {
         teritiaryColor: Color.fromRGBO(20, 116, 118, 1),
         textColor: Colors.black87,
         background: Colors.white,
+        darkOverlay: Colors.black,
         textfieldBackground: Colors.grey.shade300,
         textfieldBackground2: Colors.grey.shade100,
         hintTextColor: Colors.black26,
