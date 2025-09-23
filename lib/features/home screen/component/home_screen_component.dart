@@ -1,10 +1,10 @@
-import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
-import 'package:percent_indicator/flutter_percent_indicator.dart';
+import 'package:dumbell_cartel/features/home%20screen/widgets/step_calorie_section.dart';
 
 class HomeScreenComponent extends ConsumerWidget {
   const HomeScreenComponent({super.key});
@@ -37,32 +37,12 @@ class HomeScreenComponent extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 16.0),
-            Center(
-              child: CircularPercentIndicator(
-                radius: 120,
-                animation: true,
-                animationDuration: 700,
-                backgroundColor: color.textfieldBackground,
-                backgroundWidth: 12,
-                percent: 0.75,
-                progressColor: color.secondaryGradient1,
-                lineWidth: 50,
-                center: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Burn",
-                      style: Fontstyles.roboto16pxSemiBold(context, ref),
-                    ),
-                    Text("60%", style: Fontstyles.roboto35px(context, ref)),
-                  ],
-                ),
-              ),
-            ),
+            // Step - Calorie Section
+            StepCalorieSection(),
 
             SizedBox(height: 30.0),
 
+            // Workout logger Section
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
