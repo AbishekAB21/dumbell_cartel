@@ -1,3 +1,5 @@
+import 'package:dumbell_cartel/features/home%20screen/widgets/my_split_list.dart';
+import 'package:dumbell_cartel/features/home%20screen/widgets/suggested_workouts.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -32,25 +34,27 @@ class HomeScreenComponent extends ConsumerWidget {
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.settings))],
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 30.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Step - Calorie Section
-            StepCalorieSection(),
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 30.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Step - Calorie Section
+              StepCalorieSection(),
 
-            SizedBox(height: 30.0),
+              SizedBox(height: 15.0),
 
-            // Workout logger Section
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Text(
-                "Workout Log",
-                style: Fontstyles.roboto20px(context, ref),
-              ),
-            ),
-          ],
+              // Workout logger Section
+              MySplitList(),
+
+              SizedBox(height: 15.0),
+
+              // Suggested Workouts
+              SuggestedWorkouts()
+            ],
+          ),
         ),
       ),
     );
