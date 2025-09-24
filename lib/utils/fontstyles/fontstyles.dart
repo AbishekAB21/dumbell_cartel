@@ -136,6 +136,15 @@ class Fontstyles {
     );
   }
 
+    static TextStyle roboto13Hintpx(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(themeProvider);
+    return GoogleFonts.roboto(
+      fontSize: 13,
+      fontWeight: FontWeight.w400,
+      color: color.hintTextColor,
+    );
+  }
+
   static TextStyle roboto17Bold(BuildContext context, WidgetRef ref) {
     final color = ref.watch(themeProvider);
     return GoogleFonts.roboto(

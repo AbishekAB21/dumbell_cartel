@@ -43,8 +43,13 @@ class MySplitList extends ConsumerWidget {
                   ],
                 ).withOpacity(0.70),
                 color: color.darkOverlay,
+                image: DecorationImage(
+                  image: AssetImage("assets/images/randomdude.png"),
+                  alignment: AlignmentGeometry.bottomRight,
+                  scale: 0.8,
+                ),
               ),
-
+              clipBehavior: Clip.none,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,

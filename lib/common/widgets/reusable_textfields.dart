@@ -7,12 +7,12 @@ import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 
 class ReusableTextfield extends ConsumerWidget {
   final String hinttext;
-  final IconData icon;
+  final IconData? icon;
   final bool? isObscure;
   const ReusableTextfield({
     super.key,
     required this.hinttext,
-    required this.icon,
+    this.icon,
     this.isObscure,
   });
 

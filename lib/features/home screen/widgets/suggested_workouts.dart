@@ -16,7 +16,7 @@ class SuggestedWorkouts extends ConsumerWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
-            "Recommended Workouts",
+            "Catalogue",
             style: Fontstyles.roboto20px(context, ref),
           ),
         ),
@@ -46,6 +46,12 @@ class SuggestedWorkouts extends ConsumerWidget {
                   ],
                 ).withOpacity(0.70),
                 color: color.darkOverlay,
+
+                image: DecorationImage(
+                  image: AssetImage("assets/images/chest.png"),
+                  fit: BoxFit.contain,
+                  alignment: AlignmentGeometry.bottomRight,
+                ),
               ),
 
               child: Column(
@@ -60,7 +66,7 @@ class SuggestedWorkouts extends ConsumerWidget {
                   ),
                   Text(
                     "Difficulty : Expert",
-                    style: Fontstyles.roboto12Hintpx(context, ref),
+                    style: Fontstyles.roboto16pxSemiBold(context, ref),
                   ),
                 ],
               ),

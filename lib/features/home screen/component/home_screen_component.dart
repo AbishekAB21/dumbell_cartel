@@ -1,11 +1,11 @@
-import 'package:dumbell_cartel/features/home%20screen/widgets/my_split_list.dart';
-import 'package:dumbell_cartel/features/home%20screen/widgets/suggested_workouts.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+import 'package:dumbell_cartel/features/home%20screen/widgets/my_split_list.dart';
+import 'package:dumbell_cartel/features/home%20screen/widgets/suggested_workouts.dart';
 import 'package:dumbell_cartel/features/home%20screen/widgets/step_calorie_section.dart';
 
 class HomeScreenComponent extends ConsumerWidget {
@@ -49,7 +49,7 @@ class HomeScreenComponent extends ConsumerWidget {
               // Workout logger Section
               MySplitList(),
 
-              SizedBox(height: 15.0),
+              SizedBox(height: 25.0),
 
               // Suggested Workouts
               SuggestedWorkouts()
