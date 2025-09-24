@@ -139,7 +139,7 @@ class Fontstyles {
     static TextStyle roboto13Hintpx(BuildContext context, WidgetRef ref) {
     final color = ref.watch(themeProvider);
     return GoogleFonts.roboto(
-      fontSize: 13,
+      fontSize: 12,
       fontWeight: FontWeight.w400,
       color: color.hintTextColor,
     );
