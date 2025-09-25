@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+import 'package:go_router/go_router.dart';
 
 class MySplitList extends ConsumerWidget {
   const MySplitList({super.key});
@@ -22,49 +23,52 @@ class MySplitList extends ConsumerWidget {
           height: 155,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) => Container(
-              width: 200,
-              padding: EdgeInsets.only(
-                bottom: 10.0,
-                left: 10.0,
-                top: 20.0,
-                right: 20.0,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                gradient: LinearGradient(
-                  begin: AlignmentGeometry.topLeft,
-                  end: AlignmentGeometry.bottomRight,
-                  tileMode: TileMode.decal,
-                  colors: [
-                    color.secondaryGradient2,
-                    color.secondaryGradient1,
-                    color.teritiaryColor,
-                  ],
-                ).withOpacity(0.70),
-                color: color.darkOverlay,
-                image: DecorationImage(
-                  image: AssetImage("assets/images/randomdude.png"),
-                  alignment: AlignmentGeometry.bottomRight,
-                  scale: 0.8,
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () => context.push('/mysplit-screen'),
+              child: Container(
+                width: 200,
+                padding: EdgeInsets.only(
+                  bottom: 10.0,
+                  left: 10.0,
+                  top: 20.0,
+                  right: 20.0,
                 ),
-              ),
-              clipBehavior: Clip.none,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Push-Pull Leg",
-                    style: Fontstyles.roboto30px(context, ref),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  gradient: LinearGradient(
+                    begin: AlignmentGeometry.topLeft,
+                    end: AlignmentGeometry.bottomRight,
+                    tileMode: TileMode.decal,
+                    colors: [
+                      color.secondaryGradient2,
+                      color.secondaryGradient1,
+                      color.teritiaryColor,
+                    ],
+                  ).withOpacity(0.70),
+                  color: color.darkOverlay,
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/randomdude.png"),
+                    alignment: AlignmentGeometry.bottomRight,
+                    scale: 0.8,
                   ),
-                  Text(
-                    "Workouts : 50",
-                    style: Fontstyles.roboto12Hintpx(context, ref),
-                  ),
-                ],
+                ),
+                clipBehavior: Clip.none,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Push-Pull Leg",
+                      style: Fontstyles.roboto30px(context, ref),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      "Workouts : 50",
+                      style: Fontstyles.roboto12Hintpx(context, ref),
+                    ),
+                  ],
+                ),
               ),
             ),
             separatorBuilder: (context, index) => SizedBox(width: 10.0),
