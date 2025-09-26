@@ -16,7 +16,18 @@ class MySplitList extends ConsumerWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text("My splits", style: Fontstyles.roboto20px(context, ref)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("My splits", style: Fontstyles.roboto20px(context, ref)),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.add_circle_rounded),
+                color: color.secondaryGradient1,
+                
+              ),
+            ],
+          ),
         ),
         SizedBox(height: 15.0),
         SizedBox(

@@ -114,7 +114,7 @@ class Fontstyles {
     return GoogleFonts.roboto(
       fontSize: 16,
       fontWeight: FontWeight.w900,
-      color: color.secondaryGradient2,
+      color: color.secondaryGradient1,
     );
   }
 

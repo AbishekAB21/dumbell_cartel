@@ -25,16 +25,41 @@ class SplitDetailsComponent extends ConsumerWidget {
 
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: ListView.separated(
-          itemBuilder: (context, index) => WorkoutSplitBuilder(
-            muscleName: "Chest",
-            workoutName: "Dumbell Chest Press",
-            numberOfWorkouts: 3,
-            reps: "15",
-            sets: "3",
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Split description
+              Text(
+                "Split Guide",
+                style: Fontstyles.roboto20px(
+                  context,
+                  ref,
+                ).copyWith(color: color.secondaryGradient1),
+              ),
+              SizedBox(height: 5.0),
+              Text(
+                "This is a two muscle a day split thus allowing you to hit the same muscle twice in a week. Chest-Back, Arms, Legs-Shoulders and repeat. 1 day rest.",
+                style: Fontstyles.roboto16pxLight(context, ref),
+                textAlign: TextAlign.justify,
+              ),
+              SizedBox(height: 30.0),
+              ListView.separated(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) => WorkoutSplitBuilder(
+                  muscleName: "Chest",
+                  workoutName: "Dumbell Chest Press",
+                  numberOfWorkouts: 3,
+                  reps: "15",
+                  sets: "3",
+                ),
+                itemCount: 7,
+                separatorBuilder: (context, index) => SizedBox(height: 20.0),
+              ),
+            ],
           ),
-          itemCount: 7,
-          separatorBuilder: (context, index) => SizedBox(height: 20.0),
         ),
       ),
     );
