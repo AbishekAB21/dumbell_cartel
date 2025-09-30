@@ -1,28 +1,60 @@
+import 'package:dumbell_cartel/features/AI%20Section/core/provider/ai_loading_provider.dart';
 import 'package:flutter_riverpod/legacy.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:dumbell_cartel/features/AI%20Section/core/services/ai_service.dart';
 import 'package:dumbell_cartel/features/AI%20Section/core/model/ai_chat_model.dart';
 
-/// Handles State Management for the entire AI Screen
+/// AI Service provider
+final aiServiceProvider = Provider<AiService>((ref) => AiService());
 
-final aiChatProvider = StateNotifierProvider<AiChatNotifier, List<AiChatModel>>(
-  (ref) => AiChatNotifier(),
+/// Handles State Management for the entire AI Screen
+final aiChatProvider =
+    StateNotifierProvider<AiChatNotifier, AiScreenState>(
+  (ref) => AiChatNotifier(ref),
 );
 
-class AiChatNotifier extends StateNotifier<List<AiChatModel>> {
-  AiChatNotifier() : super([]);
+class AiChatNotifier extends StateNotifier<AiScreenState> {
+  final Ref _ref;
 
-  // For the User
+  AiChatNotifier(this._ref) : super(AiScreenState(messages: []));
+
   void addUserMessage(String text) {
-    state = [...state, AiChatModel(text: text, sender: Sender.user)];
+    final updated = [
+      ...state.messages,
+      AiChatModel(text: text, sender: Sender.user),
+    ];
+    state = state.copyWith(messages: updated);
   }
 
-  // For the AI
-  void addAIresponse(String text) {
-    state = [...state, AiChatModel(text: text, sender: Sender.ai)];
+  Future<void> sendMessage(String text) async {
+    addUserMessage(text);
+
+    // Show loading
+    state = state.copyWith(isLoading: true);
+
+    try {
+      final response = await _ref
+          .read(aiServiceProvider)
+          .sendMessage(modelName: "gemini-2.5-flash", message: text);
+
+      final updated = [
+        ...state.messages,
+        AiChatModel(text: response, sender: Sender.ai),
+      ];
+      state = state.copyWith(messages: updated, isLoading: false);
+    } catch (e) {
+      final updated = [
+        ...state.messages,
+        AiChatModel(text: "⚠️ Something went wrong: $e", sender: Sender.ai),
+      ];
+      state = state.copyWith(messages: updated, isLoading: false);
+      print("⚠️ Something went wrong: $e");
+    }
   }
 
-  // Clear chat
   void clearChat() {
-    state = [];
+    state = AiScreenState(messages: []);
   }
 }
+

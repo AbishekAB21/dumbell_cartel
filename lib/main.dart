@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/routes/app_routes.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Load .env file
+  // final envString = await rootBundle.loadString('assets/dumbell_cartel.env');
+  // await dotenv.load(fileName: envString);
+
   runApp(ProviderScope(child: const MyApp()));
 }
 

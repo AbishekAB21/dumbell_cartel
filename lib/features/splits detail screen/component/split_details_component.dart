@@ -1,10 +1,10 @@
-import 'package:dumbell_cartel/features/splits%20detail%20screen/widgets/workout_split_builder.dart';
-import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+import 'package:dumbell_cartel/features/splits%20detail%20screen/widgets/workout_split_builder.dart';
 
 class SplitDetailsComponent extends ConsumerWidget {
   const SplitDetailsComponent({super.key});
