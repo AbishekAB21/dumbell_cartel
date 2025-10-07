@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/pr_bottomsheet.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,7 +20,14 @@ class WorkoutListTile extends ConsumerWidget {
       child: InkWell(
         splashColor: color.textfieldBackground2,
         borderRadius: BorderRadius.circular(10.0),
-        onTap: (){},
+        onTap: () {
+          showModalBottomSheet(
+            context: context,
+            backgroundColor: color.transparent,
+            enableDrag: true,
+            builder: (context) => PrBottomsheet()
+          );
+        },
         child: Container(
           width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.all(10.0),
@@ -25,7 +35,7 @@ class WorkoutListTile extends ConsumerWidget {
             color: color.textfieldBackground2.withValues(alpha: 0.30),
             borderRadius: BorderRadius.circular(10.0),
           ),
-      
+
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -42,9 +52,9 @@ class WorkoutListTile extends ConsumerWidget {
                   ),
                 ),
               ),
-      
+
               const SizedBox(width: 10),
-      
+
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,9 +75,9 @@ class WorkoutListTile extends ConsumerWidget {
                   ],
                 ),
               ),
-      
+
               const SizedBox(width: 10),
-      
+
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -85,7 +95,7 @@ class WorkoutListTile extends ConsumerWidget {
                   ),
                 ],
               ),
-      
+
               SizedBox(width: 10.0),
             ],
           ),
