@@ -5,6 +5,7 @@ import 'package:dumbell_cartel/features/bottom%20nav%20bar/container/bottom_nav_
 import 'package:dumbell_cartel/features/home%20screen/container/home_screen_container.dart';
 import 'package:dumbell_cartel/features/profile%20screen/containers/profile_screen_container.dart';
 import 'package:dumbell_cartel/features/splits%20detail%20screen/container/split_details_container.dart';
+import 'package:dumbell_cartel/features/suggested%20workouts%20screen/container/suggested_workout_container.dart';
 import 'package:dumbell_cartel/features/welcome%20screen/container/welcome_screen_container.dart';
 import 'package:go_router/go_router.dart';
 
@@ -47,6 +48,13 @@ final GoRouter appRouter = GoRouter(
       path: '/mysplit-screen',
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: SplitDetailsContainer()),
+    ),
+  
+    // Suggested workouts Screen
+    GoRoute(
+      path: '/suggestedworkouts-screen',
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: SuggestedWorkoutContainer()),
     ),
 
     ShellRoute(

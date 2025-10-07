@@ -21,7 +21,6 @@ class _AiScreenComponentState extends ConsumerState<AiScreenComponent> {
   @override
   Widget build(BuildContext context) {
     final color = ref.watch(themeProvider);
-    final message = ref.watch(aiChatProvider);
     final aiState = ref.watch(aiChatProvider);
 
     return GestureDetector(
