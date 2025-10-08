@@ -34,7 +34,7 @@ class StepCalorieSection extends ConsumerWidget {
                         // Switch between Steps and Calories
                         ref.read(visibilityProvider.notifier).state = true;
                       },
-                      icon: Icon(Icons.change_circle_rounded, size: 25),
+                      icon: Icon(Icons.change_circle_rounded, size: 25, color: color.secondaryGradient2,),
                     ),
                   ],
                 ),

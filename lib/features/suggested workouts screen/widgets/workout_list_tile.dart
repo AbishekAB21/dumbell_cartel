@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/pr_bottomsheet.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +23,7 @@ class WorkoutListTile extends ConsumerWidget {
             context: context,
             backgroundColor: color.transparent,
             enableDrag: true,
+            isScrollControlled: true,
             builder: (context) => PrBottomsheet()
           );
         },
@@ -97,6 +96,8 @@ class WorkoutListTile extends ConsumerWidget {
               ),
 
               SizedBox(width: 10.0),
+
+              
             ],
           ),
         ),

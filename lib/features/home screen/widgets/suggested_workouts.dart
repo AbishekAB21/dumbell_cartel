@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,9 +17,45 @@ class SuggestedWorkouts extends ConsumerWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text(
-            "Catalogue",
-            style: Fontstyles.roboto20px(context, ref),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Strength tracker",
+                style: Fontstyles.roboto20px(context, ref),
+              ),
+              IconButton(
+                onPressed: () {
+                  showCupertinoDialog(
+                    barrierDismissible: true,
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      backgroundColor: color.textfieldBackground,
+                      title: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.info, color: color.secondaryGradient2,size: 50,),
+                          SizedBox(height: 10.0,),
+                          Text(
+                            "Strength tracker",
+                            style: Fontstyles.roboto22px(
+                              context,
+                              ref,
+                            ).copyWith(color: color.secondaryGradient2),
+                          ),
+                        ],
+                      ),
+                      content: Text(
+                        "Search for the workouts you've done, log your PRs and keep track of your progress!",
+                        style: Fontstyles.roboto15px(context, ref),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  );
+                },
+                icon: Icon(Icons.info, color: color.secondaryGradient2),
+              ),
+            ],
           ),
         ),
         SizedBox(height: 15.0),
@@ -49,14 +86,14 @@ class SuggestedWorkouts extends ConsumerWidget {
                     ],
                   ).withOpacity(0.70),
                   color: color.darkOverlay,
-              
+
                   image: DecorationImage(
                     image: AssetImage("assets/images/chest.png"),
                     fit: BoxFit.contain,
                     alignment: AlignmentGeometry.bottomRight,
                   ),
                 ),
-              
+
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
