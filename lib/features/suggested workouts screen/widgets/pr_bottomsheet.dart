@@ -2,13 +2,13 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/pr_button.dart';
 import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/pr_textfield.dart';
-import 'package:go_router/go_router.dart';
 
 class PrBottomsheet extends ConsumerWidget {
   const PrBottomsheet({super.key});
@@ -147,7 +147,11 @@ class PrBottomsheet extends ConsumerWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              PrTextfield(labelText: "Weight (Kg)"),
+                              PrTextfield(
+                                labelText: "Weight (Kg)",
+                                maxLength: 4,
+                                previousPR: "22.5", // Weight
+                              ),
                               SizedBox(width: 15.0),
                               Text(
                                 "X",
@@ -159,7 +163,11 @@ class PrBottomsheet extends ConsumerWidget {
                                     ),
                               ),
                               SizedBox(width: 15.0),
-                              PrTextfield(labelText: "Reps"),
+                              PrTextfield(
+                                labelText: "Reps",
+                                maxLength: 2,
+                                previousPR: "12", // Reps
+                              ),
                             ],
                           ),
 

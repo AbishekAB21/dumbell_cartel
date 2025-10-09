@@ -7,7 +7,14 @@ import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 
 class PrTextfield extends ConsumerWidget {
   final String labelText;
-  const PrTextfield({super.key, required this.labelText});
+  final int maxLength;
+  final String previousPR;
+  const PrTextfield({
+    super.key,
+    required this.labelText,
+    required this.maxLength,
+    required this.previousPR,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -17,23 +24,31 @@ class PrTextfield extends ConsumerWidget {
         children: [
           TextFormField(
             cursorColor: color.iconColor,
-            maxLength: 4,
+            maxLength: maxLength,
             keyboardType: TextInputType.number,
             style: Fontstyles.roboto35px(
               context,
               ref,
             ).copyWith(color: color.secondaryGradient1),
-            
+
             textAlign: TextAlign.center,
             decoration: InputDecoration(
-              
               counterText: '',
               contentPadding: EdgeInsets.symmetric(vertical: 20),
               filled: true,
+              hintText: previousPR,
+              hintStyle: Fontstyles.roboto35px(
+                context,
+                ref,
+              ).copyWith(color: color.iconColor.withValues(alpha: 0.35)),
+              hintFadeDuration: Duration(milliseconds: 300),
               fillColor: color.iconColor.withValues(alpha: 0.15),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
-                borderSide: BorderSide(color: color.secondaryGradient2,width: 2.0),
+                borderSide: BorderSide(
+                  color: color.secondaryGradient2,
+                  width: 2.0,
+                ),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
