@@ -55,7 +55,7 @@ class StepCalorieSection extends ConsumerWidget {
                   backgroundColor: color.textfieldBackground,
                   backgroundWidth: 12,
                   percent: 0.75,
-                  progressColor: color.secondaryGradient1,
+                  progressColor: color.secondaryGradient2,
                   lineWidth: 50,
                   center: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -117,7 +117,7 @@ class StepCalorieSection extends ConsumerWidget {
                   backgroundColor: color.textfieldBackground,
                   backgroundWidth: 12,
                   percent: 0.5,
-                  progressColor: color.secondaryGradient1,
+                  progressColor: color.secondaryGradient2,
                   lineWidth: 50,
                   center: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -41,13 +41,17 @@ class WorkoutSplitBuilder extends ConsumerWidget {
             child: Row(
               children: [
                 Container(
-                  width: 60,
-                  height: 60,
+                  padding: EdgeInsets.all(10.0),
+                  width: 70.0,
+                  height: 70.0,
                   decoration: BoxDecoration(
-                    border: Border.all(color: color.textfieldBackground2),
-                    borderRadius: BorderRadius.circular(20),
+                    color: color.darkOverlay,
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/incline-dumbell.jpg"),
+                      fit: BoxFit.contain,
+                    ),
                   ),
-                  child: Image.asset("assets/images/chest_muscle.png"),
                 ),
                 SizedBox(width: 10.0),
                 Text(
