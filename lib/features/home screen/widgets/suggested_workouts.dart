@@ -28,14 +28,19 @@ class SuggestedWorkouts extends ConsumerWidget {
                 onPressed: () {
                   showCupertinoDialog(
                     barrierDismissible: true,
+                    barrierColor: color.darkOverlay.withValues(alpha: 0.85),
                     context: context,
                     builder: (context) => AlertDialog(
                       backgroundColor: color.textfieldBackground,
                       title: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.info, color: color.secondaryGradient2,size: 50,),
-                          SizedBox(height: 10.0,),
+                          Icon(
+                            Icons.info,
+                            color: color.secondaryGradient2,
+                            size: 50,
+                          ),
+                          SizedBox(height: 10.0),
                           Text(
                             "Strength tracker",
                             style: Fontstyles.roboto22px(
