@@ -8,8 +8,6 @@ class AiService {
       receiveTimeout: Duration(seconds: 60),
       headers: {
         "Content-Type": "application/json",
-        // "Authorization": dotenv.env["GEMINI_API_KEY"],
-        // "Authorization": "AIzaSyD6-LhCnW9oQD-4KL34C5rOwUfDtkGVo4Q",
       },
     ),
   );
@@ -34,7 +32,7 @@ Question: $message
 
       final response = await _dio.post(
         "/models/$modelName:generateContent",
-        queryParameters: {"key": "ADD A KEY"},
+        queryParameters: {"key": "Add a key"},
         data: {
           "contents": [
             {

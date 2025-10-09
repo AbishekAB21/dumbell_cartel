@@ -7,6 +7,7 @@ import 'package:dumbell_cartel/features/profile%20screen/containers/profile_scre
 import 'package:dumbell_cartel/features/splits%20detail%20screen/container/split_details_container.dart';
 import 'package:dumbell_cartel/features/suggested%20workouts%20screen/container/suggested_workout_container.dart';
 import 'package:dumbell_cartel/features/welcome%20screen/container/welcome_screen_container.dart';
+import 'package:dumbell_cartel/features/workout%20instructions/container/tips_screen_container.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:dumbell_cartel/common/transitions/page_fade_transition.dart';
@@ -55,6 +56,13 @@ final GoRouter appRouter = GoRouter(
       path: '/suggestedworkouts-screen',
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: SuggestedWorkoutContainer()),
+    ),
+
+    // Workout tips Screen
+    GoRoute(
+      path: '/workouttips-screen',
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: TipsScreenContainer()),
     ),
 
     ShellRoute(

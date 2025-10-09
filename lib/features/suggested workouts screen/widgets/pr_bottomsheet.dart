@@ -1,14 +1,14 @@
 import 'dart:ui';
 
-import 'package:dumbell_cartel/common/widgets/reusable_button.dart';
-import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/pr_button.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/pr_button.dart';
 import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/pr_textfield.dart';
+import 'package:go_router/go_router.dart';
 
 class PrBottomsheet extends ConsumerWidget {
   const PrBottomsheet({super.key});
@@ -45,7 +45,7 @@ class PrBottomsheet extends ConsumerWidget {
                 vertical: 30.0,
               ),
               child: Column(
-                 mainAxisSize: MainAxisSize.min,
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
@@ -78,7 +78,6 @@ class PrBottomsheet extends ConsumerWidget {
                       ),
                       SizedBox(width: 10.0),
                       Column(
-                       
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -113,6 +112,23 @@ class PrBottomsheet extends ConsumerWidget {
                       ),
                       child: Column(
                         children: [
+                          IconButton(
+                            tooltip: "Workout tips",
+
+                            onPressed: () {
+                              context.pop();
+
+                              context.push(
+                                '/workouttips-screen',
+                              ); // use context while widget is still active
+                            },
+                            icon: Icon(
+                              Icons.tips_and_updates_rounded,
+                              size: 30,
+                              color: color.secondaryGradient2,
+                            ),
+                          ),
+
                           Text(
                             "What is the heaviest weight you lifted?",
                             style: Fontstyles.roboto25px(context, ref),
@@ -131,14 +147,15 @@ class PrBottomsheet extends ConsumerWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              PrTextfield(labelText: "Weight (Kg)",),
+                              PrTextfield(labelText: "Weight (Kg)"),
                               SizedBox(width: 15.0),
                               Text(
                                 "X",
                                 style: Fontstyles.roboto35px(context, ref)
                                     .copyWith(
-                                      color: color.iconColor
-                                          .withValues(alpha: 0.85),
+                                      color: color.iconColor.withValues(
+                                        alpha: 0.85,
+                                      ),
                                     ),
                               ),
                               SizedBox(width: 15.0),
@@ -146,14 +163,11 @@ class PrBottomsheet extends ConsumerWidget {
                             ],
                           ),
 
-                          SizedBox(height: 40.0,),
+                          SizedBox(height: 40.0),
 
                           PrButton(),
-
                         ],
-                        
                       ),
-                      
                     ),
                   ),
                 ],

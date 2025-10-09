@@ -1,4 +1,4 @@
-package com.example.dumbell_cartel
+package com.abishek.dumbell_cartel
 
 import io.flutter.embedding.android.FlutterActivity
 
