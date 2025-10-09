@@ -109,7 +109,7 @@ class Fontstyles {
     );
   }
 
-  static TextStyle roboto16pxSemiBoldBlue(BuildContext context, WidgetRef ref) {
+  static TextStyle roboto16pxSemiBoldGreen(BuildContext context, WidgetRef ref) {
     final color = ref.watch(themeProvider);
     return GoogleFonts.roboto(
       fontSize: 16,

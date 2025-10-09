@@ -69,7 +69,7 @@ class Authbox extends ConsumerWidget {
                 children: [
                   TextSpan(
                     text: 'Sign Up',
-                    style: Fontstyles.roboto16pxSemiBoldBlue(context, ref),
+                    style: Fontstyles.roboto16pxSemiBoldGreen(context, ref),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
                         context.push('/signup-screen');

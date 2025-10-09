@@ -1,4 +1,3 @@
-import 'package:dumbell_cartel/features/home%20screen/core/providers/home_screen_provider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,6 +5,7 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+import 'package:dumbell_cartel/features/home%20screen/core/providers/home_screen_provider.dart';
 
 class StepCalorieSection extends ConsumerWidget {
   const StepCalorieSection({super.key});
@@ -28,13 +28,20 @@ class StepCalorieSection extends ConsumerWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Steps covered", style: Fontstyles.roboto20px(context, ref)),
+                    Text(
+                      "Steps covered",
+                      style: Fontstyles.roboto20px(context, ref),
+                    ),
                     IconButton(
                       onPressed: () {
                         // Switch between Steps and Calories
                         ref.read(visibilityProvider.notifier).state = true;
                       },
-                      icon: Icon(Icons.change_circle_rounded, size: 25, color: color.secondaryGradient2,),
+                      icon: Icon(
+                        Icons.change_circle_rounded,
+                        size: 25,
+                        color: color.secondaryGradient2,
+                      ),
                     ),
                   ],
                 ),
@@ -83,13 +90,20 @@ class StepCalorieSection extends ConsumerWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Calories burned", style: Fontstyles.roboto20px(context, ref)),
+                    Text(
+                      "Calories burned",
+                      style: Fontstyles.roboto20px(context, ref),
+                    ),
                     IconButton(
                       onPressed: () {
                         // Switch between Calories and Steps
                         ref.read(visibilityProvider.notifier).state = false;
                       },
-                      icon: Icon(Icons.change_circle_rounded, size: 25),
+                      icon: Icon(
+                        Icons.change_circle_rounded,
+                        size: 25,
+                        color: color.secondaryGradient2,
+                      ),
                     ),
                   ],
                 ),

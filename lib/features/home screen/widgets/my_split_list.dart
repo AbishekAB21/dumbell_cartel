@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
+import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
-import 'package:go_router/go_router.dart';
 
 class MySplitList extends ConsumerWidget {
   const MySplitList({super.key});
@@ -21,10 +22,11 @@ class MySplitList extends ConsumerWidget {
             children: [
               Text("My splits", style: Fontstyles.roboto20px(context, ref)),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.push('/addsplit-screen');
+                },
                 icon: Icon(Icons.add_circle_rounded),
                 color: color.secondaryGradient1,
-                
               ),
             ],
           ),

@@ -81,7 +81,7 @@ class TipsScreenComponent extends ConsumerWidget {
                 children: [
                   TextSpan(
                     text: 'Upper Chest',
-                    style: Fontstyles.roboto16pxSemiBoldBlue(context, ref),
+                    style: Fontstyles.roboto16pxSemiBoldGreen(context, ref),
                   ),
                 ],
               ),

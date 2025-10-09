@@ -28,7 +28,7 @@ class CalorieStepsSection extends ConsumerWidget {
             SizedBox(height: 5.0),
             Text(
               "123 Kcal",
-              style: Fontstyles.roboto16pxSemiBoldBlue(context, ref),
+              style: Fontstyles.roboto16pxSemiBoldGreen(context, ref),
             ),
           ],
         ),
@@ -47,7 +47,7 @@ class CalorieStepsSection extends ConsumerWidget {
             SizedBox(height: 5.0),
             Text(
               "6234 Steps",
-              style: Fontstyles.roboto16pxSemiBoldBlue(context, ref),
+              style: Fontstyles.roboto16pxSemiBoldGreen(context, ref),
             ),
           ],
         ),

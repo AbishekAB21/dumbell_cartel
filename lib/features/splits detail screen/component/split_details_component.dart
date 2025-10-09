@@ -18,7 +18,7 @@ class SplitDetailsComponent extends ConsumerWidget {
         backgroundColor: color.background,
         title: Text(
           "Push Pull Legs",
-          style: Fontstyles.roboto16pxSemiBoldBlue(context, ref),
+          style: Fontstyles.roboto16pxSemiBoldGreen(context, ref),
         ),
         centerTitle: false,
       ),

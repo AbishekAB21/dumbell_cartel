@@ -1,4 +1,5 @@
 import 'package:dumbell_cartel/features/AI%20Section/container/ai_screen_container.dart';
+import 'package:dumbell_cartel/features/add%20split%20screen/container/add_split_screen_container.dart';
 import 'package:dumbell_cartel/features/auth%20screens/sign%20in%20screen/container/sign_in_container.dart';
 import 'package:dumbell_cartel/features/auth%20screens/sign%20up%20screen/container/sign_up_container.dart';
 import 'package:dumbell_cartel/features/bottom%20nav%20bar/container/bottom_nav_bar_container.dart';
@@ -49,6 +50,13 @@ final GoRouter appRouter = GoRouter(
       path: '/mysplit-screen',
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: SplitDetailsContainer()),
+    ),
+
+    // Add Splits Screen
+    GoRoute(
+      path: '/addsplit-screen',
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: AddSplitScreenContainer()),
     ),
   
     // Suggested workouts Screen

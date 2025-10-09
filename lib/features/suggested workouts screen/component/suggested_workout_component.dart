@@ -1,11 +1,12 @@
-import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/search_box.dart';
-import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/workout_list_tile.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+import 'package:dumbell_cartel/common/widgets/reusable_workout_list_tile.dart';
+import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/search_box.dart';
+import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/pr_bottomsheet.dart';
 
 class SuggestedWorkoutComponent extends ConsumerWidget {
   const SuggestedWorkoutComponent({super.key});
@@ -50,10 +51,41 @@ class SuggestedWorkoutComponent extends ConsumerWidget {
 
               SizedBox(height: 20.0),
 
-              // List
+              // List of workouts
               Expanded(
                 child: ListView.separated(
-                  itemBuilder: (context, index) => WorkoutListTile(),
+                  itemBuilder: (context, index) => InkWell(
+                    splashColor: color.textfieldBackground2,
+                    borderRadius: BorderRadius.circular(10.0),
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        backgroundColor: color.transparent,
+                        enableDrag: true,
+                        isScrollControlled: true,
+                        builder: (context) => PrBottomsheet(),
+                      );
+                    },
+                    child: ReusableWorkoutListTile(
+                      suffixWidget: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "27.5 x 12",
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            style: Fontstyles.roboto17Bold(context, ref),
+                          ),
+                          Text(
+                            "Logged on 3 Jul",
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            style: Fontstyles.roboto13Hintpx(context, ref),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   separatorBuilder: (context, index) => SizedBox(height: 10.0),
                   itemCount: 10,
                 ),

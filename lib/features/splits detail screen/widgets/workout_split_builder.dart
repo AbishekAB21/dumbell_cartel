@@ -61,7 +61,7 @@ class WorkoutSplitBuilder extends ConsumerWidget {
                 Spacer(),
                 Text(
                   "${reps}x$sets",
-                  style: Fontstyles.roboto16pxSemiBoldBlue(context, ref),
+                  style: Fontstyles.roboto16pxSemiBoldGreen(context, ref),
                 ),
               ],
             ),
