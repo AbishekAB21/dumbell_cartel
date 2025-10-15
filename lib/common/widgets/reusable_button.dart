@@ -20,7 +20,7 @@ class ReusableButton extends ConsumerWidget {
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.zero, // removes default padding
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(15),
           ),
         ),
         onPressed: onPressed,
@@ -35,13 +35,16 @@ class ReusableButton extends ConsumerWidget {
                 color.teritiaryColor,
               ],
             ),
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(15),
           ),
           child: Container(
             alignment: Alignment.center,
             child: Text(
               title,
-              style: Fontstyles.roboto18px(context, ref),
+              style: Fontstyles.roboto18px(
+                context,
+                ref,
+              ).copyWith(fontWeight: FontWeight.w800),
             ),
           ),
         ),

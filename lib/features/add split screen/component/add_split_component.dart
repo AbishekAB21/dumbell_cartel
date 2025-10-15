@@ -9,14 +9,7 @@ import 'package:dumbell_cartel/common/widgets/reusable_textfields.dart';
 import 'package:dumbell_cartel/common/widgets/reusable_workout_list_tile.dart';
 
 class AddSplitComponent extends ConsumerWidget {
-  AddSplitComponent({super.key});
-
-  final List<String> items = [
-    "Incline Chest Press",
-    "Facepulls",
-    "Leg Press",
-    "Leg Extentions",
-  ];
+  const AddSplitComponent({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -32,6 +25,12 @@ class AddSplitComponent extends ConsumerWidget {
             style: Fontstyles.roboto16pxSemiBoldGreen(context, ref),
           ),
           centerTitle: false,
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.save_rounded, color: color.secondaryGradient2),
+            ),
+          ],
         ),
 
         body: Padding(
@@ -50,6 +49,19 @@ class AddSplitComponent extends ConsumerWidget {
               ReusableTextfield(
                 hinttext: 'Give your custom workout split a name!',
                 icon: Icons.sports_gymnastics,
+              ),
+              SizedBox(height: 20.0),
+              Text(
+                "Split guide",
+                style: Fontstyles.roboto20px(
+                  context,
+                  ref,
+                ).copyWith(color: color.secondaryGradient2),
+              ),
+              SizedBox(height: 10.0),
+              ReusableTextfield(
+                hinttext: 'A guide on how to do this workout split',
+                icon: Icons.tips_and_updates_rounded,
               ),
               SizedBox(height: 40.0),
               Text(

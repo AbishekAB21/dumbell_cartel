@@ -283,6 +283,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_top_snackbar:
+    dependency: "direct main"
+    description:
+      name: flutter_top_snackbar
+      sha256: "573a2870c0eee45dc19e458969c0680bfd73e540054549bfe83fe32e7015ff5e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.4"
   flutter_web_plugins:
     dependency: transitive
     description: flutter

@@ -1,9 +1,9 @@
-import 'package:dumbell_cartel/features/auth%20screens/sign%20in%20screen/widgets/authbox.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+import 'package:dumbell_cartel/features/auth%20screens/sign%20in%20screen/widgets/sign_in_authbox.dart';
 
 class SignInComponent extends ConsumerWidget {
   const SignInComponent({super.key});
@@ -52,7 +52,7 @@ class SignInComponent extends ConsumerWidget {
                   Spacer(),
 
                   // Auth box
-                  Authbox(),
+                  SignInAuthbox(),
                 ],
               ),
             ),

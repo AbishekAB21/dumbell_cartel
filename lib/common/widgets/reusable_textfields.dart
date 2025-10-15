@@ -9,17 +9,20 @@ class ReusableTextfield extends ConsumerWidget {
   final String hinttext;
   final IconData? icon;
   final bool? isObscure;
+  final TextEditingController? cntrlr;
   const ReusableTextfield({
     super.key,
     required this.hinttext,
     this.icon,
     this.isObscure,
+    this.cntrlr
   });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final color = ref.watch(themeProvider);
     return TextFormField(
+      controller: cntrlr,
       style: Fontstyles.roboto15px(context, ref),
       obscureText: isObscure ?? false,
       decoration: InputDecoration(
