@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "962884237857",
+    "project_id": "dumbbell-cartel-fd47c",
+    "storage_bucket": "dumbbell-cartel-fd47c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962884237857:android:0df3345f81e907b63cc160",
+        "android_client_info": {
+          "package_name": "com.abishek.dumbell_cartel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBBPKeGgwpVf46a2Tw5pz-T7HkGDf0cjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

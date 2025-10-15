@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:dumbell_cartel/common/widgets/search_box.dart';
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
-import 'package:dumbell_cartel/common/widgets/reusable_workout_list_tile.dart';
 import 'package:dumbell_cartel/common/widgets/reusable_textfields.dart';
+import 'package:dumbell_cartel/common/widgets/reusable_workout_list_tile.dart';
 
 class AddSplitComponent extends ConsumerWidget {
   AddSplitComponent({super.key});
@@ -59,27 +60,9 @@ class AddSplitComponent extends ConsumerWidget {
                 ).copyWith(color: color.secondaryGradient2),
               ),
               SizedBox(height: 10.0),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: color.textfieldBackground2),
-                ),
-                child: DropdownButton<String>(
-                  //value: selectedValue,
-                  icon: Icon(
-                    Icons.arrow_drop_down_circle_rounded,
-                    color: color.secondaryGradient2,
-                  ),
-                  underline: const SizedBox(),
-                  isExpanded: true,
-                  hint: const Text("Select an option"),
-                  items: [],
-                  onChanged: (value) {},
-                ),
-              ),
 
+              // Search Workout
+              SearchBox(onChanged: (value) {}),
               SizedBox(height: 20.0),
               Expanded(
                 child: ListView.separated(

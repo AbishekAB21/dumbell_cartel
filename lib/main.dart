@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,6 +12,8 @@ Future<void> main() async {
   // Load .env file
   // final envString = await rootBundle.loadString('assets/dumbell_cartel.env');
   // await dotenv.load(fileName: envString);
+
+  await Firebase.initializeApp();
 
   runApp(ProviderScope(child: const MyApp()));
 }

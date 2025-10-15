@@ -6,7 +6,8 @@ import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 
 class SearchBox extends ConsumerWidget {
-  const SearchBox({super.key});
+  final void Function(String)? onChanged;
+  const SearchBox({super.key, required this.onChanged});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,6 +29,8 @@ class SearchBox extends ConsumerWidget {
           borderSide: BorderSide(color: color.textfieldBackground2),
         ),
       ),
+      onChanged: onChanged,
     );
+  
   }
 }

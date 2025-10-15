@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 import 'package:dumbell_cartel/common/widgets/reusable_workout_list_tile.dart';
-import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/search_box.dart';
+import 'package:dumbell_cartel/common/widgets/search_box.dart';
 import 'package:dumbell_cartel/features/suggested%20workouts%20screen/widgets/pr_bottomsheet.dart';
 
 class SuggestedWorkoutComponent extends ConsumerWidget {
@@ -47,7 +47,7 @@ class SuggestedWorkoutComponent extends ConsumerWidget {
               SizedBox(height: 20.0),
 
               // Search section
-              SearchBox(),
+              SearchBox(onChanged: (value){},),
 
               SizedBox(height: 20.0),
 
