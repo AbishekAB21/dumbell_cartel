@@ -4,13 +4,19 @@ import 'package:flutter/gestures.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:flutter_top_snackbar/flutter_top_snackbar.dart';
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/widgets/reusable_button.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 import 'package:dumbell_cartel/common/widgets/reusable_textfields.dart';
+import 'package:dumbell_cartel/features/auth%20screens/sign%20up%20screen/core/database/sign_up_db.dart';
 
 class SignupAuthbox extends ConsumerWidget {
-  const SignupAuthbox({super.key});
+  SignupAuthbox({super.key});
+
+  final TextEditingController userNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,11 +36,19 @@ class SignupAuthbox extends ConsumerWidget {
 
           SizedBox(height: 30),
 
-          ReusableTextfield(hinttext: "Username", icon: Icons.person),
+          ReusableTextfield(
+            hinttext: "Username",
+            icon: Icons.person,
+            cntrlr: userNameController,
+          ),
 
           SizedBox(height: 30.0),
 
-          ReusableTextfield(hinttext: "Email", icon: Icons.email),
+          ReusableTextfield(
+            hinttext: "Email",
+            icon: Icons.email,
+            cntrlr: emailController,
+          ),
 
           SizedBox(height: 30.0),
 
@@ -42,6 +56,7 @@ class SignupAuthbox extends ConsumerWidget {
             hinttext: "Password",
             icon: Icons.password,
             isObscure: true,
+            cntrlr: passwordController,
           ),
 
           SizedBox(height: 15.0),
@@ -58,8 +73,62 @@ class SignupAuthbox extends ConsumerWidget {
 
           ReusableButton(
             title: "Sign up",
-            onPressed: () {
-              context.pushReplacement('/home-screen');
+            onPressed: () async {
+              if (userNameController.text.isNotEmpty &&
+                  emailController.text.isNotEmpty &&
+                  passwordController.text.isNotEmpty) {
+                try {
+                  await SignUpDb().createUserWithEmailAndPassword(
+                    userNameController.text.trim(),
+                    emailController.text.trim(),
+                    passwordController.text.trim(),
+                  );
+                  if (context.mounted) {
+                    context.go('/home-screen');
+                    FlutterTopSnackbar.show(
+                      context,
+                      "Logged in!",
+                      padding: EdgeInsets.all(15.0),
+                      showCloseButton: false,
+                      customIcon: Icons.check_rounded,
+                      messageFontstyle: Fontstyles.roboto17Bold(context, ref),
+                      borderRadius: 15.0,
+                      animationType: AnimationTypes.slideFromTop,
+                      elevation: 4,
+                      customBackgroundColor: color.secondaryGradient2,
+                    );
+                  }
+                } catch (e) {
+                  if (context.mounted) {
+                    FlutterTopSnackbar.show(
+                      context,
+                      "Something went wrong",
+                      padding: EdgeInsets.all(15.0),
+                      customIcon: Icons.error,
+                      showCloseButton: false,
+                      messageFontstyle: Fontstyles.roboto17Bold(context, ref),
+                      borderRadius: 15.0,
+                      animationType: AnimationTypes.slideFromTop,
+                      elevation: 4,
+                      customBackgroundColor: color.errorColor,
+                    );
+                  }
+                }
+              } else {
+                FlutterTopSnackbar.show(
+                  context,
+                  "Please fill all the credentials",
+                  padding: EdgeInsets.all(15.0),
+                  closeButtonSize: 10,
+                  customIcon: Icons.warning,
+                  showCloseButton: false,
+                  messageFontstyle: Fontstyles.roboto17Bold(context, ref),
+                  borderRadius: 15.0,
+                  animationType: AnimationTypes.slideFromTop,
+                  elevation: 4,
+                  customBackgroundColor: color.warningColor,
+                );
+              }
             },
           ),
 

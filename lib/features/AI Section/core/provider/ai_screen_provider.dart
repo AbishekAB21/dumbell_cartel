@@ -49,7 +49,7 @@ class AiChatNotifier extends StateNotifier<AiScreenState> {
         AiChatModel(text: "⚠️ Something went wrong: $e", sender: Sender.ai),
       ];
       state = state.copyWith(messages: updated, isLoading: false);
-      print("⚠️ Something went wrong: $e");
+      
     }
   }
 

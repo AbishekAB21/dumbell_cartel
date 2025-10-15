@@ -74,18 +74,7 @@ class SignInAuthbox extends ConsumerWidget {
                   );
                   if (context.mounted) {
                     context.go('/home-screen');
-                    FlutterTopSnackbar.show(
-                      context,
-                      "Logged in!",
-                      padding: EdgeInsets.all(15.0),
-                      showCloseButton: false,
-                      customIcon: Icons.check_rounded,
-                      messageFontstyle: Fontstyles.roboto17Bold(context, ref),
-                      borderRadius: 15.0,
-                      animationType: AnimationTypes.slideFromTop,
-                      elevation: 4,
-                      customBackgroundColor: color.secondaryGradient2,
-                    );
+                    
                   }
                 } catch (e) {
                   if (context.mounted) {

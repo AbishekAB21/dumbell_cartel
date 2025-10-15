@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
+import 'package:dumbell_cartel/features/splash%20screen/core/provider/splash_provider.dart';
 
 class SplashScreenComponent extends ConsumerStatefulWidget {
   const SplashScreenComponent({super.key});
@@ -18,18 +19,12 @@ class _SplashScreenComponentState extends ConsumerState<SplashScreenComponent> {
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 3), () {
-      // final splashAuthCheck = ref.read(splashAuthProvider);
-
-      // splashAuthCheck.whenData((isLoggedIn) {
-      //   isLoggedIn
-      //       ? context.go('/home-screen')
-      //       : context.go('/welcome-screen');
-
-      //   print('USER: _______ ${FirebaseAuth.instance.currentUser}');
-      // });
-
-      context.pushReplacement('/welcome-screen');
+    // Delay navigation for 3 seconds (splash effect)
+    Future.delayed(Duration(seconds: 3), () {
+      final isLoggedIn = ref.read(splashAuthProvider);
+      if (context.mounted) {
+        context.go(isLoggedIn ? '/home-screen' : '/welcome-screen');
+      }
     });
   }
 

@@ -12,4 +12,13 @@ class SignInDb {
       throw Exception('Could not sign in');
     }
   }
+
+  // Sign out
+  signOutUser() async {
+    try {
+      await _auth.signOut();
+    } catch (e) {
+      throw Exception('Could not sign out');
+    }
+  }
 }
