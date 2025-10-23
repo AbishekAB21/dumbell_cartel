@@ -52,7 +52,9 @@ class SignUpComponent extends ConsumerWidget {
                   Spacer(),
 
                   // Auth box
-                  SignupAuthbox(),
+                  SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    child: SignupAuthbox()),
                 ],
               ),
             ),

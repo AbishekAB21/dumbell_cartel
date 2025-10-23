@@ -48,11 +48,13 @@ class SignInComponent extends ConsumerWidget {
                       width: 100,
                     ),
                   ),
-
+            
                   Spacer(),
-
+            
                   // Auth box
-                  SignInAuthbox(),
+                  SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    child: SignInAuthbox()),
                 ],
               ),
             ),
