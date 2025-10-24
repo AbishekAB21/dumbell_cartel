@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
+import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dumbell_cartel/utils/fontstyles/fontstyles.dart';
 import 'package:dumbell_cartel/common/providers/theme_provider.dart';
-import 'package:go_router/go_router.dart';
 
 class SuggestedWorkouts extends ConsumerWidget {
   const SuggestedWorkouts({super.key});
