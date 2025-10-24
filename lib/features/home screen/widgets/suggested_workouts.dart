@@ -87,7 +87,7 @@ class SuggestedWorkouts extends ConsumerWidget {
                     colors: [
                       color.secondaryGradient2,
                       color.secondaryGradient1,
-                      color.teritiaryColor,
+                      
                     ],
                   ).withOpacity(0.70),
                   color: color.darkOverlay,
