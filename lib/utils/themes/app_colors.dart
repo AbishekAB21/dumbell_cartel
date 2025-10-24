@@ -48,7 +48,7 @@ class AppDefaultColor extends Appcolor {
         primaryColor: Colors.black,
         secondaryGradient1: Color.fromRGBO(165, 235, 63, 1),
         secondaryGradient2: Color.fromRGBO(144, 204, 54, 1),
-        teritiaryColor: Color.fromRGBO(163, 239, 50, 1),
+        teritiaryColor: Colors.greenAccent,
         textColor: Colors.white70,
         background: Colors.black,
         darkOverlay: Colors.black,
@@ -58,7 +58,7 @@ class AppDefaultColor extends Appcolor {
         successColor: Colors.green.shade900,
         errorColor: Colors.red,
         deleteColor: const Color.fromARGB(255, 152, 23, 14),
-        warningColor: Colors.amber,
+        warningColor: Colors.amberAccent,
         iconColor: Colors.white,
         transparent: Colors.transparent
       );
@@ -70,7 +70,7 @@ class AppDarkColor extends Appcolor {
         primaryColor: Colors.black,
         secondaryGradient1: Color.fromRGBO(165, 235, 63, 1),
         secondaryGradient2: Color.fromRGBO(144, 204, 54, 1),
-        teritiaryColor: Color.fromRGBO(163, 239, 50, 1),
+        teritiaryColor: Colors.greenAccent,
         textColor: Colors.white70,
         background: Colors.black,
         darkOverlay: Colors.black,
@@ -80,7 +80,7 @@ class AppDarkColor extends Appcolor {
         successColor: Colors.green.shade900,
         errorColor: Colors.red,
         deleteColor: const Color.fromARGB(255, 152, 23, 14),
-        warningColor: Colors.amber,
+        warningColor: Colors.amberAccent,
         iconColor: Colors.white,
         transparent: Colors.transparent
       );
@@ -92,7 +92,7 @@ class AppLightColor extends Appcolor {
         primaryColor: Colors.white,
         secondaryGradient1: Color.fromRGBO(165, 235, 63, 1),
         secondaryGradient2: Color.fromRGBO(144, 204, 54, 1),
-        teritiaryColor: Color.fromRGBO(163, 239, 50, 1),
+        teritiaryColor: Colors.greenAccent,
         textColor: Colors.black87,
         background: Colors.white,
         darkOverlay: Colors.black,
@@ -102,7 +102,7 @@ class AppLightColor extends Appcolor {
         successColor: Colors.green,
         errorColor: Colors.red,
         deleteColor: const Color.fromARGB(255, 152, 23, 14),
-        warningColor: Colors.amber,
+        warningColor: Colors.amberAccent,
         iconColor: Colors.black,
         transparent: Colors.transparent
       );

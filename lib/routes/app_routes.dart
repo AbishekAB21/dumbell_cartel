@@ -3,6 +3,7 @@ import 'package:dumbell_cartel/features/add%20split%20screen/container/add_split
 import 'package:dumbell_cartel/features/auth%20screens/sign%20in%20screen/container/sign_in_container.dart';
 import 'package:dumbell_cartel/features/auth%20screens/sign%20up%20screen/container/sign_up_container.dart';
 import 'package:dumbell_cartel/features/bottom%20nav%20bar/container/bottom_nav_bar_container.dart';
+import 'package:dumbell_cartel/features/chart%20screen/containers/chart_screen_container.dart';
 import 'package:dumbell_cartel/features/home%20screen/container/home_screen_container.dart';
 import 'package:dumbell_cartel/features/profile%20screen/containers/profile_screen_container.dart';
 import 'package:dumbell_cartel/features/splits%20detail%20screen/container/split_details_container.dart';
@@ -45,6 +46,13 @@ final GoRouter appRouter = GoRouter(
           fadeTransitionPage(child: SignUpContainer()),
     ),
 
+    // Charts Screen
+    GoRoute(
+      path: '/charts-screen',
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: ChartScreenContainer()),
+    ),
+
     // My Splits Detail Screen
     GoRoute(
       path: '/mysplit-screen',
@@ -58,7 +66,7 @@ final GoRouter appRouter = GoRouter(
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: AddSplitScreenContainer()),
     ),
-  
+
     // Suggested workouts Screen
     GoRoute(
       path: '/suggestedworkouts-screen',
