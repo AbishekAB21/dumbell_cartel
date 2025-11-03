@@ -84,6 +84,9 @@ class SuggestedWorkoutComponent extends ConsumerWidget {
                           ),
                         ],
                       ),
+                      name: 'Incline press',
+                      target: 'chest',
+                      
                     ),
                   ),
                   separatorBuilder: (context, index) => SizedBox(height: 10.0),

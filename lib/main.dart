@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,9 +10,7 @@ import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Load .env file
-  // final envString = await rootBundle.loadString('assets/dumbell_cartel.env');
-  // await dotenv.load(fileName: envString);
+  // await dotenv.load(fileName: 'dumbell_cartel.env');
 
   await Firebase.initializeApp();
 

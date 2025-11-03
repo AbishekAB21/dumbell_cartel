@@ -32,7 +32,7 @@ class ReusableButton extends ConsumerWidget {
               colors: [
                 color.secondaryGradient1,
                 color.secondaryGradient2,
-                color.teritiaryColor,
+                
               ],
             ),
             borderRadius: BorderRadius.circular(15),

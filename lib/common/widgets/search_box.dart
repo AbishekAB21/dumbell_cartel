@@ -7,12 +7,14 @@ import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 
 class SearchBox extends ConsumerWidget {
   final void Function(String)? onChanged;
-  const SearchBox({super.key, required this.onChanged});
+  final TextEditingController? cntrlr;
+  const SearchBox({super.key, required this.onChanged, this.cntrlr});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final color = ref.watch(themeProvider);
     return TextFormField(
+      controller: cntrlr,
       style: Fontstyles.roboto15px(context, ref),
       decoration: InputDecoration(
         isDense: true,

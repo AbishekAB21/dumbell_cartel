@@ -7,7 +7,14 @@ import 'package:dumbell_cartel/common/providers/theme_provider.dart';
 
 class ReusableWorkoutListTile extends ConsumerWidget {
   final Widget? suffixWidget;
-  const ReusableWorkoutListTile({super.key, this.suffixWidget});
+  final String name;
+  final String target;
+  const ReusableWorkoutListTile({
+    super.key,
+    this.suffixWidget,
+    required this.name,
+    required this.target,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,18 +33,9 @@ class ReusableWorkoutListTile extends ConsumerWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              padding: EdgeInsets.all(10.0),
-              width: 70.0,
-              height: 70.0,
-              decoration: BoxDecoration(
-                color: color.darkOverlay,
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  image: AssetImage("assets/images/incline-dumbell.jpg"),
-                  fit: BoxFit.contain,
-                ),
-              ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset('assets/images/workoutleading.png', width: 60),
             ),
 
             const SizedBox(width: 10),
@@ -47,7 +45,7 @@ class ReusableWorkoutListTile extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Incline Dumbbell Press",
+                    name,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                     style: Fontstyles.roboto18px(context, ref).copyWith(
@@ -55,10 +53,7 @@ class ReusableWorkoutListTile extends ConsumerWidget {
                       fontWeight: FontWeight.w900,
                     ),
                   ),
-                  Text(
-                    "UPPER CHEST",
-                    style: Fontstyles.roboto13Hintpx(context, ref),
-                  ),
+                  Text(target, style: Fontstyles.roboto13px(context, ref)),
                 ],
               ),
             ),
